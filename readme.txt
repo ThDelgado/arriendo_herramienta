@@ -1,0 +1,9 @@
+CUE: SQL – PK Y FK 
+DRILLING: EMPRESA DE ARRIENDO DE HERRAMIENTAS 
+m5s3
+Evaluacion
+
+PARA CLONAR:
+
+
+Thelma Delgado

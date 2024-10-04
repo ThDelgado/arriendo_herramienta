@@ -1,0 +1,32 @@
+CREATE TABLE empresas( 
+rut_empresa VARCHAR(10) PRIMARY KEY, 
+nombre VARCHAR (120) NOT NULL, 
+direccion VARCHAR(120) NOT NULL, 
+telefono VARCHAR(15) NOT NULL, 
+correo VARCHAR(80) NOT NULL, 
+web VARCHAR(50) ); 
+
+  
+CREATE TABLE clientes( 
+rut_cliente VARCHAR(10) PRIMARY KEY,
+rut_empresa VARCHAR(10) REFERENCES empresas(rut_empresa),
+nombre VARCHAR(120) NOT NULL, 
+correo VARCHAR(80) NOT NULL, 
+direccion VARCHAR(120) not NULL, 
+celular VARCHAR(15)); 
+
+   
+create TABLE arriendos( 
+id_arriendo SERIAL PRIMARY KEY, 
+rut_cliente VARCHAR(10) REFERENCES clientes(rut_cliente), 
+fecha DATE NOT NULL, 
+dias_arriendo INTEGER not NULL, 
+precio_dia NUMERIC(12,2) NOT NULL);
+	
+	
+CREATE TABLE herramientas( 
+id_herramienta SERIAL PRIMARY KEY, 
+id_arriendo INTEGER REFERENCES arriendos(id_arriendo),
+nombre VARCHAR(120) NOT NULL, 
+precio_dia NUMERIC(12,2) NOT NULL); 
+   
